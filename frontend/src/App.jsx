@@ -42,12 +42,12 @@ function App() {
   }, [checkAuth]);
   console.log('isCheckingAuth', isCheckingAuth);
 
-  useEffect(() => {
-    console.log("Before checkAuth:", isCheckingAuth);
-    checkAuth().then(() => {
-      console.log("After checkAuth:", isCheckingAuth);
-    });
-  }, [checkAuth]);
+  // useEffect(() => {
+  //   console.log("Before checkAuth:", isCheckingAuth);
+  //   checkAuth().then(() => {
+  //     console.log("After checkAuth:", isCheckingAuth);
+  //   });
+  // }, [checkAuth]);
 
   // console.log("isAuthenticated : ", isAuthenticated);
   // console.log("user : ", user);
