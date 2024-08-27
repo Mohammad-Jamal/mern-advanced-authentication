@@ -40,7 +40,7 @@ function App() {
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
-  console.log('isCheckingAuth', isCheckingAuth);
+  // console.log('isCheckingAuth', isCheckingAuth);
 
   // useEffect(() => {
   //   console.log("Before checkAuth:", isCheckingAuth);
