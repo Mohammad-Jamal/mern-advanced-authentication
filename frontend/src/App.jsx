@@ -51,7 +51,7 @@ function App() {
   // console.log("isAuthenticated : ", isAuthenticated);
   // console.log("user : ", user);
 
-  if (isCheckingAuth) return <LoadingSpinner />;
+  // if (isCheckingAuth) return <LoadingSpinner />;
   return (
     <div
       className="min-h-screen bg-gradient-to-br
