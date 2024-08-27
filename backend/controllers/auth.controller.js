@@ -3,7 +3,7 @@ import crypto from 'crypto'
 
 
 import { generateTokenAndSetCookie } from '../utils/generateTokenAndSetCookie.js';
-import { sendVerificationEmail,sendWelcomeEmail,sendPasswordResetEmail,sendResetSuccessEmail } from '../mailtrap/emails.js';
+import { sendVerificationEmail,sendPasswordResetEmail,sendResetSuccessEmail } from '../mailtrap/emails.js';
 import {User} from '../models/user.model.js'
 
 
@@ -69,7 +69,7 @@ export const verifyEmail = async(req,res) => {
     user.verificationTokenExpiresAt = undefined;
     await user.save();
 
-    await sendWelcomeEmail(user.email, user.name);
+    // await sendWelcomeEmail(user.email, user.name);
 
     res.status(200).json({
       success: true,

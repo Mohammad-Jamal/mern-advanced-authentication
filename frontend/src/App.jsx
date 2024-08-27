@@ -29,16 +29,23 @@ const RedirectAuthenticatedUsers = ({ children }) => {
   const { isAuthenticated, user } = useAuthStore();
 
   if (isAuthenticated && user.isVerified) {
-    return <Navigate to="/" replace />; // shows only home page and not the signup page
+    return <Navigate to="/" replace />; // shows only home page and not the signup page i.e DashboardPage
   }
 
-  return children; // returns the current page
+  return children; // returns the current page 
 };
 function App() {
   const { isCheckingAuth, checkAuth } = useAuthStore();
 
   useEffect(() => {
     checkAuth();
+  }, [checkAuth]);
+
+  useEffect(() => {
+    console.log("Before checkAuth:", isCheckingAuth);
+    checkAuth().then(() => {
+      console.log("After checkAuth:", isCheckingAuth);
+    });
   }, [checkAuth]);
 
   // console.log("isAuthenticated : ", isAuthenticated);
